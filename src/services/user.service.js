@@ -1,18 +1,24 @@
-// Usamos 'export' para poder usarlo en otros archivos
 export const UserService = {
-    baseUrl: 'https://jsonplaceholder.typicode.com',
+    api : 'https://api.escuelajs.co',
+    allProducts: '/api/v1/products',
+    searchByTitle : '/api/v1/products/?title=',
 
-    // Método para obtener usuarios
     getUsers: function() {
-        console.log("Hola mundo")
+        console.log("Iniciando petición a la API...");
+        
+        return $.ajax({
+            url: "https://fakestoreapi.com/products",
+            method: 'GET',
+            dataType: 'json'
+        });
     },
 
-    // Método para crear un usuario
-    createUser: function(userData) {
+    searchByTitleService: function(productData) {
         return $.ajax({
-            url: `${this.baseUrl}/users`,
-            method: 'POST',
-            data: userData
+            url: this.api+this.searchByTitle+productData,
+            method: 'GET',
+            contentType: 'application/json',
+            data: 'json'
         });
     }
 };

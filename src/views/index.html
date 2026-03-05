@@ -1,24 +1,64 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <title>Mi App jQuery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
-    <nav id="menu">
-            <button class="nav-link" data-page="home.html">Inicio</button>
-            <button class="nav-link" data-page="perfil.html">Perfil</button>
-        
-        <main id="content-area">
-            <h1>Cargando...</h1>
-        </main>
-        
-        <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
-    </nav>
-    
-    <main id="root">
-        </main>
+<header id="header">
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm py-3" style="background-color: #1A374D;">
+        <div class="container">
+            <a class="navbar-brand fw-bold goToView" data-page="home.html" href="#">
+                <span class="logo">
+                    MODERNA<span>STORE</span>
+                </span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-custom goToView" data-page="catalogo.html" href="#">Catálogo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-custom goToView" data-page="perfil.html" href="#">Mi Perfil</a>
+                    </li>
+                </ul>
+
+                <div class="d-flex" style="max-width: 300px;">
+                    <div class="input-group">
+                        <span class="input-group-text bg-transparent border-end-0 text-white-50">
+                            <i class="bi bi-search"></i>
+                        </span>
+                        <input type="text" id="input-busqueda"
+                            class="form-control bg-transparent border-start-0 text-white" placeholder="Buscar..."
+                            style="color:white !important">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<body class="bg-light">
+    <div class="container mt-4">
+        <div id="root" class="row g-4">
+        </div>
+    </div>
+
+    <div class="container py-5">
+        <main id="root">
+        </main>
+    </div>
+
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
     <script type="module" src="../js/main.js"></script>
 </body>
+
 </html>
